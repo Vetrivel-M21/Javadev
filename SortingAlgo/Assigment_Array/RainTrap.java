@@ -16,9 +16,10 @@ public class RainTrap {
     
         for (int i = 0; i < testCases.length; i++) {
             int[] a = testCases[i];
-            int water = findWater(a);
+            // int water = findWater(a);
+            int unit = trap(a);
              System.out.println("Test Case " + (i + 1) + ": " + Arrays.toString(a));
-            System.out.println("Trapped water: " + water + " units\n");
+            System.out.println("Trapped water: " + unit + " units\n");
         }
     
     }
@@ -61,19 +62,9 @@ public class RainTrap {
         // System.out.println(Arrays.toString(left));
         // System.out.println(Arrays.toString(a));
         
-        int[] rightmax = new int[n];
-        // [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
-        
-        // for(int i =1 ; i<a.length;i++)
-        // {
-        //     if( right[i] <a[i]){
-        //         rightmax[n-1] = a[i];
-        //     }
-        //     else{
-        //         rightmax[n-i] = right[i];
-        //     }
-        // }
-        System.out.println(Arrays.toString(rightmax));
+        // int[] rightmax = new int[n];
+
+        // System.out.println(Arrays.toString(rightmax));
         
         for(int i =0 ; i<a.length;i++)
         {
@@ -84,16 +75,45 @@ public class RainTrap {
                 water[i] = left[i];
             }
         }
-        System.out.println(Arrays.toString(water));
+        // System.out.println(Arrays.toString(water));
 
         for(int i =0; i<a.length;i++)
         {
             water[i]=water[i]-a[i];
             units +=water[i];
         }
-        System.out.println(Arrays.toString(water));
+        // System.out.println(Arrays.toString(water));
 
         return units;
+    }
+
+    public static int trap(int[] a)
+    {
+        int unit =0;
+        int[] left = new int[a.length];
+        int[] right = new int[a.length];
+
+
+        left[0]= a[0];
+        for(int i=1; i<a.length;i++)
+        {
+            left[i] = Math.max(left[i-1], a[i]);
+        }
+
+        right[a.length-1] = a[a.length-1];
+        for(int i = a.length-2 ; i>=0 ;i--)
+        {
+            right[i] = Math.max(right[i+1], a[i]);
+        }
+
+        for(int i=0; i<a.length;i++)
+        {
+            unit += Math.min(left[i], right[i])-a[i];
+        }
+
+        System.out.println(Arrays.toString(left));
+        System.out.println(Arrays.toString(right));
+        return unit;
     }
 
     

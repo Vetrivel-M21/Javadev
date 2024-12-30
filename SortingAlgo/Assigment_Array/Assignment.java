@@ -21,7 +21,7 @@ public class Assignment {
 
         System.out.println("\n---------***Assignment-4***---------");
         System.out.println("\n-------sum of prime  numbers---------");
-        int [] b ={2, 1,0, 3, 5, 4, 6 ,7};
+        int [] b ={2, 1,0, 3, 5, 4, 6 ,7, 8, 13, 11};
         int prime_sum = SumOfPrime(b);
         System.out.println(": "+prime_sum);
 
