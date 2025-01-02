@@ -1,9 +1,9 @@
-import java.lang.reflect.Array;
+
 import java.util.Arrays;
 
 public class CountingSort {
     public static void main(String[] args) {
-        int[] a = {8, 3, 5, 7, 7, 1, 0, 5, 4};
+        int[] a = {0, 0, 1, 0, 1};
 
         System.out.println(Arrays.toString(a));
         int max =Findmax(a);
@@ -40,7 +40,7 @@ public class CountingSort {
 
     public static void countingsort(int[] a, int[] c)
     {   int j=0;
-        for(int i =0; i < a.length; i++ )
+        for(int i =0; i < c.length; i++ )
         {
             while (c[i] > 0) {
                 a[j] = i;
