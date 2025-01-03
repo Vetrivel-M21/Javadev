@@ -48,7 +48,7 @@ public class MergeSort {
         {
             a[i] = temp[m];
         }
-        // System.out.println(Arrays.toString(temp));
+        
         
 
     }
