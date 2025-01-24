@@ -1,9 +1,11 @@
+
 class bikeobject {
     // @SuppressWarnings("static-access")
     static Bike bike1 = new Bike();
     static Bike bike2 = new Bike();
     static Bike bike3 = new Bike();
     public static void main(String[] args) {
+        System.out.println(bike1);
         
 
         bike1.carDetails();
@@ -11,7 +13,7 @@ class bikeobject {
         System.out.println("bike one name is "+bike2.bikename);
         System.out.println("\n");
         System.out.println("Bike @1");
-        bike1.run();
+        bike1.runit();
         bike1.acselarete();
         bike1.changeGear();
         bike1.stop();
@@ -28,7 +30,7 @@ class bikeobject {
         System.out.println("Bike owner is  : "+bike1.owner);
         System.out.println("\n");
         System.out.println("Bike @2");
-        bike2.run();
+        bike2.runit();
         bike2.acselarete();
         bike2.changeGear();
         bike2.stop();
@@ -48,7 +50,7 @@ class bikeobject {
         {
             System.out.println(bike1.bikename+" is perfect");
         }
-    }
+     }
 
 
     

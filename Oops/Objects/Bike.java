@@ -5,13 +5,18 @@ class Bike {
     String bikename ,color;
     static String owner="Goku" ;
     Double price;
-    public static void main(String[] args) {
+    public Bike(){
+        System.out.println("I am a Contructor");
         
     }
+    public int runit(){
+        return run();
+    }
 
-    public void run()
+    private int run()
     {
         System.out.println(bikename+" bike is perfectly run");
+        return 0;
     }
 
     public void changeGear(){
